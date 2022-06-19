@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const LinkedList = require('./LinkedList');
+const LinkedList = require("./LinkedList");
 
 const ll = new LinkedList();
 ll.append(7);
@@ -21,9 +21,9 @@ console.log(ll.includes(33)); // -----> return true
 console.log(ll.includes(37)); // -----> return false
 
 //
-console.log('---------YNWA--------');
+console.log("---------YNWA--------");
 ll.insertBefor(0, 17);
-console.log('---------YNWA--------');
+console.log("---------YNWA--------");
 ll.insertAfter(15, 7);
 ll.insertAfter(7, 77);
 ll.insertAfter(33, 44);
@@ -35,13 +35,12 @@ console.log(ll.toString());
 ll.printAll();
 
 // k-th value from the end of a linked list......
-console.log('--------k-th value from the end of a linked list.----------');
+console.log("--------k-th value from the end of a linked list.----------");
 let kth_value = ll.kthFromEnd(0);
 console.log(kth_value);
 
-
 ///////////////////////////////////////////////////////////////////////////////////
-console.log('--------- zipLists ----------');
+console.log("--------- zipLists ----------");
 const ll1 = new LinkedList();
 ll1.append(7);
 ll1.append(9);

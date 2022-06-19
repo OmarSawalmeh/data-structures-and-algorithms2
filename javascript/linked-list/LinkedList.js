@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-let Node = require('./Node');
+let Node = require("./Node");
 
 class LinkedList {
   constructor() {
@@ -70,18 +70,18 @@ class LinkedList {
   }
 
   // Insert Befor the specific value.....
-  insertBefor(value, newValue){
+  insertBefor(value, newValue) {
     let currNode = this.head;
 
     // EdgeCase::
-    if(this.head.value === value){
+    if (this.head.value === value) {
       // Insert befor the head
       this.insert(newValue);
     }
 
-    while(currNode.next !== null){
+    while (currNode.next !== null) {
       //console.log(currNode.next.value, value);
-      if(currNode.next.value === value){
+      if (currNode.next.value === value) {
         //console.log("YESSSSSSSSSS", currNode.next.value, value);
         const newNode = new Node(newValue);
         let temp = currNode.next;
@@ -94,12 +94,12 @@ class LinkedList {
   }
 
   // Insert After the specific value.....
-  insertAfter(value, newValue){
+  insertAfter(value, newValue) {
     let currNode = this.head;
 
-    while(currNode !== null){
+    while (currNode !== null) {
       //console.log(currNode.next.value, value);
-      if(currNode.value === value){
+      if (currNode.value === value) {
         //console.log("YESSSSSSSSSS", currNode.next.value, value);
         const newNode = new Node(newValue);
         let temp = currNode.next;
@@ -112,7 +112,7 @@ class LinkedList {
   }
 
   // [[ k-th ]] value from the end of a linked list......
-  kthFromEnd(k){
+  kthFromEnd(k) {
     let obj = {};
     let index = 0;
     let currNode = this.head;
@@ -127,13 +127,13 @@ class LinkedList {
     let value;
     const reversedKeys = Object.keys(obj).reverse();
 
-    if(k >= reversedKeys.length){
-      return ('IndexOutOfRangeException: Linked-list index is out of range.');
+    if (k >= reversedKeys.length) {
+      return "IndexOutOfRangeException: Linked-list index is out of range.";
     }
 
-    reversedKeys.forEach(key => {
-      if(index === k){
-        value = (obj[key]);
+    reversedKeys.forEach((key) => {
+      if (index === k) {
+        value = obj[key];
       }
       index += 1;
     });
@@ -141,18 +141,18 @@ class LinkedList {
     return value;
   }
 
-  zipLists(list1, list2){
+  zipLists(list1, list2) {
     const ll = new LinkedList();
 
     let curr1 = list1.head;
     let curr2 = list2.head;
 
-    while(curr1 !== null | curr2 !== null){
-      if(curr1 !== null){
+    while ((curr1 !== null) | (curr2 !== null)) {
+      if (curr1 !== null) {
         ll.append(curr1.value);
         curr1 = curr1.next;
       }
-      if(curr2 !== null){
+      if (curr2 !== null) {
         ll.append(curr2.value);
         curr2 = curr2.next;
       }
@@ -160,9 +160,6 @@ class LinkedList {
 
     return ll;
   }
-
-
-
 }
 
 module.exports = LinkedList;
