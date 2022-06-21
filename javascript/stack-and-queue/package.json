@@ -1,0 +1,22 @@
+{
+  "name": "stack-and-queue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
+    "test": "jest --verbose --coverage",
+    "start":"node index.js",
+    "lint": "eslint '**/*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "supertest": "^6.2.3"
+  }
+}
