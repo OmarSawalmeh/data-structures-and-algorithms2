@@ -10,17 +10,21 @@ represents a first-in, first out collection of object. It is used when you need 
 Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue.
 
 ## **Approach & Efficiency:**
-1. Big O for stack:
+1. Big O for **stack**:
     - Push O(1)
     - Pop O(1)
     - Peek O(1)
     - IsEmpty O(1)
-
-2. Big O for Queue:
+<br/>
+2. Big O for **Queue**:
     - Enqueue O(1)
     - Dequeue O(1)
     - Peek    O(1)
     - IsEmpty O(1)
+<br/>
+3. Big O for **PseudoQueue**:
+    - Enqueue O(n^2)
+    - Dequeue O(1)
 
 ## **API:**
 
