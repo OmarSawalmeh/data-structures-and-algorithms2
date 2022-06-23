@@ -2,7 +2,7 @@
 
 const Queue = require("../queue/queue");
 
-describe("Stack test", () => {
+describe("Queue test", () => {
   test("Can successfully enqueue into a queue", () => {
     const queue = new Queue();
     queue.enqueue(5);
