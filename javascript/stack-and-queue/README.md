@@ -23,6 +23,9 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 3. Big O for **PseudoQueue**:
     - Enqueue O(n^2)
     - Dequeue O(1)
+4. Big O for **AnimalShelter**:
+    - Enqueue O(1)
+    - Dequeue O(n^1)    
 
 ## **API:**
 
