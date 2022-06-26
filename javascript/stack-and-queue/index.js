@@ -1,6 +1,7 @@
 const Stack = require('./stack/Stack');
 const Queue = require('./queue/queue');
 const PseudoQueue = require('./ pseudo-queue/ pseudo-queue');
+const AnimalShelter = require('./stack-queue-animal-shelter/AnimalShelter');
 
 console.log('---------- Stack ---------');
 const newStack = new Stack();
@@ -44,6 +45,25 @@ pQ.dequeue();
 pQ.dequeue();
 pQ.dequeue();
 pQ.dequeue();
+
+console.log('---------- AnimalShelter ---------');
+const anim = new AnimalShelter();
+anim.enqueue('cat');
+anim.enqueue('dog');
+anim.enqueue('dog');
+anim.enqueue('cat');
+anim.enqueue('dog');
+console.log('Queue Length is', anim.length);
+
+console.log(anim.dequeue());
+console.log(anim.dequeue('dog3'));
+console.log(anim.dequeue('dog'));
+console.log(anim.dequeue('dog'));
+console.log(anim.dequeue('cat'));
+console.log('Queue Length is', anim.length);
+
+
+
 
 
 
