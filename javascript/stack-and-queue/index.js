@@ -62,6 +62,23 @@ console.log(anim.dequeue('dog'));
 console.log(anim.dequeue('cat'));
 console.log('Queue Length is', anim.length);
 
+console.log('---------- validateBrackets ---------');
+
+const newStack2 = new Stack();
+console.log(newStack2.validateBrackets('{}'));
+console.log(newStack2.validateBrackets('{}(){}'));
+console.log(newStack2.validateBrackets('()[[Extra Characters]]'));
+console.log(newStack2.validateBrackets('(){}[[]]'));
+console.log(newStack2.validateBrackets('{}{Code}[Fellows](())'));
+console.log(newStack2.validateBrackets('[({}]'));
+console.log(newStack2.validateBrackets('(]('));
+console.log(newStack2.validateBrackets('{(})'));
+
+
+
+
+
+
 
 
 
