@@ -25,7 +25,9 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
     - Dequeue O(1)
 4. Big O for **AnimalShelter**:
     - Enqueue O(1)
-    - Dequeue O(n^1)    
+    - Dequeue O(n^1)
+## **Whiteboard for AnimalShelter**
+![](./img/AnimalShelterQueue.jpg)    
 
 ## **API:**
 
