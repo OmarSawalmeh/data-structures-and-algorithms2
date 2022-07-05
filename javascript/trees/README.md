@@ -18,15 +18,21 @@ Using a Trees as the underlying data storage mechanism, implement tree and binar
 
 ## **Approach & Efficiency**
 
-- Big O for preOrder is O(n)
+- Big O for **preOrder** is O(n)
 
-- Big O for inOrder is O(n)
+- Big O for **inOrder** is O(n)
 
-- Big O for postOrder is O(n)
+- Big O for **postOrder** is O(n)
 
-- Big O for Add is O(n)
+- Big O for **Add** is O(n)
 
-- Big O for Contains is  O(log n)
+- Big O for **Contains** is  O(log n)
+
+---
+
+- Big O for **findMax** is  O(log n)
+- Space for **findMax** is O(n^2)
+![](./img/findMax.jpg)
 
 </br></br>
 
