@@ -41,6 +41,8 @@ let postOrder = tree.postOrder();
 console.log("post order: ", postOrder);
 // post order > 8 , 9 , 7 , 6 , 2 , 4 , 5 , 3 , 1
 
+console.log(tree.findMax(one));
+
 /////////////////////////////////////////////////////////////////////
 console.log('-------- Binary Search Tree ---------');
 let bst = new BinarySearchTree();

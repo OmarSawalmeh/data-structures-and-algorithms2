@@ -49,4 +49,9 @@ describe("Binary Tree", () => {
     let postOrder = tree.postOrder();
     expect(postOrder).toEqual(expectedOutput);
   });
+
+  test("Return Null when a tree is empty", () => {
+    const newTree = new BinaryTree();
+    expect(newTree.findMax(newTree.root)).toEqual(null);
+  });
 });

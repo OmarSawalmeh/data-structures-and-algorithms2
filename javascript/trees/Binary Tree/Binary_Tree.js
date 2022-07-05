@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class binaryTree {
   constructor(root = null) {
@@ -52,6 +52,23 @@ class binaryTree {
     traverse(this.root);
     return arrayOfReadNodes;
   }
+
+  findMax(node) {
+    if (node === null) return null;
+    else {
+      let max = node.value;
+      let right = this.findMax(node.right);
+      let left = this.findMax(node.left);
+      if (right > max) {
+        max = right;
+      }
+      if (left > max) {
+        max = left;
+      }
+      return max;
+    }
+  }
+  
 }
 
 module.exports = binaryTree;
