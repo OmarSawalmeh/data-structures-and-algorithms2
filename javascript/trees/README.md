@@ -29,12 +29,21 @@ Using a Trees as the underlying data storage mechanism, implement tree and binar
 - Big O for **Contains** is  O(log n)
 
 ---
-
 - Big O for **findMax** is  O(log n)
 - Space for **findMax** is O(n^2)
 ![](./img/findMax.jpg)
 
+---
+
+- Big O for **breadthFirstSearch** is  O(log n)
+![](./img/BFS.jpg)
+
+---
+
+
 </br></br>
+
+--- 
 
 ## **API**
 - preorder function : to oreder our node in the tree like root-left-right
