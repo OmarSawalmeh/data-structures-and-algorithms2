@@ -54,4 +54,31 @@ describe("Binary Tree", () => {
     const newTree = new BinaryTree();
     expect(newTree.findMax(newTree.root)).toEqual(null);
   });
+
+  test("Test Breadth-first approach", () => {
+    let two2 = new Node(2);
+    let seven7 = new Node(7);
+    let two22 = new Node(2);
+    let six6 = new Node(6);
+    let five5 = new Node(5);
+    let eleven11 = new Node(11);
+    let five55 = new Node(5);
+    let four4 = new Node(4);
+    let nine9 = new Node(9);
+    
+    
+    two2.left = seven7;
+    two2.right = five5;            
+    seven7.left = two22;           
+    seven7.right = six6;         
+    six6.left = five55;           
+    six6.right = eleven11;   
+    five5.right = nine9;
+    nine9.left = four4;
+    
+    tree = new BinaryTree(two2);
+
+    let bfs = tree.breadthFirstSearch();
+    expect(bfs).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
+  });
 });
