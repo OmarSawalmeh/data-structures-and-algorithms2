@@ -60,6 +60,7 @@ Insertion sort is a simple sorting algorithm that works similar to the way you s
          5   	   11   	   12   	  * 6 *   	   13  
 
    - Now, 6 is smaller than 12, hence, swap again
+   
          5   	   11   	   * 6 *   	   12   	   13  
 
    - Here, also swapping makes 11 and 6 unsorted hence, swap again
