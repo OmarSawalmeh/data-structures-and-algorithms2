@@ -22,7 +22,20 @@ Hash Tables are a data structure that allow you to create a list of paired value
 - Big O for **get** is O(n) and space O(1)
 - Big O for **contains** is O(n) and space O(1)
 - Big O for **keys** is O(n) and space O(n)
+- Big O for **repeatedWord** is O(n) and space O(n)
 
+## **Tests**
+**✓** Setting a key/value to your hashtable results in the value being in the data structure 
+
+**✓** Successfully handle a collision within the hashtable && return the true or false depend on contain the key or not. 
+
+**✓** Successfully returns value for a key that exist in the hashtable
+
+**✓** Successfully returns null for a key that does not exist in the hashtable
+
+**✓** Successfully returns a list of all unique keys that exist in the hashtable
+
+**✓** Successfully returns a first repeated word in inputs
 
 ---
 
@@ -44,3 +57,6 @@ Hash Tables are a data structure that allow you to create a list of paired value
    - hash
       -  Arguments: key
       -  Returns: Index in the collection for that key
+   - repeatedWord
+      -  Arguments: string
+      -  Returns: string    
