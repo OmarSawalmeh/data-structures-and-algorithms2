@@ -75,5 +75,21 @@ describe("Linked List", () => {
     expect(ret1).toEqual(["laith", "ahmad", "shihab", "esam"]);
   });
 
+    test("Successfully returns a first repeated word in inputs", () => {
+      const input1 = "Once upon a time, there was a brave princess who...";
+      const input2 ="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+      const input3 ="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didnt know what I was doing in New York...";
+
+      const myhashmap = new hashTable(10);
+
+      let ret1 = myhashmap.repeatedWord(input1);
+      let ret2 = myhashmap.repeatedWord(input2);
+      let ret3 = myhashmap.repeatedWord(input3);
+
+      expect(ret1).toEqual("a");
+      expect(ret2).toEqual("it");
+      expect(ret3).toEqual("summer");
+    });
+
 
 });
