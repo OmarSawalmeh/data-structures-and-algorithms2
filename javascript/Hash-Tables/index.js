@@ -82,15 +82,37 @@ class Hashmap {
   }
 
   keys() {
-   const keys = [];
+    const keys = [];
     this.map.forEach((ll) => {
       let key = Object.keys(ll.head.value)[0];
       keys.push(key);
     });
     return keys;
   }
+
+   repeatedWord(input) {
+
+    if (!input) {
+      return 'No input';
+    }
+
+    const hash = new Hashmap(10);
+    const words = input.split(" ");
+    //console.log(words);
+    for (let i = 0; i < words.length; i++) {
+      let word = words[i].toLowerCase();
+      if (word.charAt(word.length - 1) === ",") {
+        word = word.slice(0, -1);
+      }
+        if (hash.contains(word)) {
+          return word;
+        } else {
+          hash.set(word, word);
+        }
+    }
+    return 'There is no repetition of words in input';
+  }
 }
-      
 
 const myhashmap = new Hashmap(10);
 myhashmap.set("esam", "401d15 student");
@@ -108,14 +130,38 @@ myhashmap.map.forEach((ll) => {
   console.log(ll.head.value["esam"] === "undefined");
 });
 
-console.log('GET .... ');
+console.log("GET .... ");
 console.log(myhashmap.get("ahmad"));
 
 console.log("contains .... ");
-console.log('---------', myhashmap.contains("ahmad"));
+console.log("---------", myhashmap.contains("ahmad"));
 
 console.log("keys .... ");
 //console.log("---------", myhashmap.contains("ahmad"));
 console.log(myhashmap.keys());
 
+
+// Test Repeated Word
+const input1 = 'Once upon a time, there was a brave princess who...';
+const input2 ="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+
+
+const newHash = new Hashmap(10);
+
+let ret = newHash.repeatedWord(input1);
+console.log(ret);
+
+let ret2 = newHash.repeatedWord(input2);
+console.log(ret2);
+
 module.exports = Hashmap;
+
+
+//  for (let i = 0; i < words.length; i++) {
+//    let word = words[i].toLowerCase();
+//    if (hash.contains(word)) {
+//      return word;
+//    } else {
+//      hash.set(word, word);
+//    }
+//  }
