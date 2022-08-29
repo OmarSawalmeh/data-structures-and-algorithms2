@@ -23,6 +23,10 @@ Hash Tables are a data structure that allow you to create a list of paired value
 - Big O for **contains** is O(n) and space O(1)
 - Big O for **keys** is O(n) and space O(n)
 - Big O for **repeatedWord** is O(n) and space O(n)
+- Big O for **lefJoin** is O(n) and space O(n)
+    ### Whitebord for **leftJoin**
+   ![](./asset/leftJoin.jpg)
+
 
 ## **Tests**
 **✓** Setting a key/value to your hashtable results in the value being in the data structure 
@@ -59,4 +63,11 @@ Hash Tables are a data structure that allow you to create a list of paired value
       -  Returns: Index in the collection for that key
    - repeatedWord
       -  Arguments: string
-      -  Returns: string    
+      -  Returns: string 
+   - leftJoin
+      -  Arguments: two hash maps (hashMap1, hashMap2)
+         - The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+         -  The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+      -  Returns: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic   
+
+
