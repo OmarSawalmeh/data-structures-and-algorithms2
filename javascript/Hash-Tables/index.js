@@ -70,15 +70,17 @@ class Hashmap {
   }
 
   contains(key) {
-    let ret = false;
-    this.map.forEach((ll) => {
-      const check = ll.head.value[key] !== undefined;
-      // console.log(check);
-      if (check == true) {
-        ret = true;
+    let hashIndex = this.hash(key);
+    if (this.map[hashIndex]) {
+      let current = this.map[hashIndex].head;
+      while (current) {
+        if (current.value[key]) return true;
+        current = current.next;
       }
-    });
-    return ret;
+      return false;
+    } else {
+      return false;
+    }
   }
 
   keys() {
@@ -90,10 +92,9 @@ class Hashmap {
     return keys;
   }
 
-   repeatedWord(input) {
-
+  repeatedWord(input) {
     if (!input) {
-      return 'No input';
+      return "No input";
     }
 
     const hash = new Hashmap(10);
@@ -104,64 +105,90 @@ class Hashmap {
       if (word.charAt(word.length - 1) === ",") {
         word = word.slice(0, -1);
       }
-        if (hash.contains(word)) {
-          return word;
-        } else {
-          hash.set(word, word);
-        }
+      if (hash.contains(word)) {
+        return word;
+      } else {
+        hash.set(word, word);
+      }
     }
-    return 'There is no repetition of words in input';
+    return "There is no repetition of words in input";
+  }
+
+  // Code Challenge: Class 33
+  hashKey(hash, value) {
+
+    let result = [];
+    let key = Object.keys(this.map[hash])[0];
+    result.push(key);
+    let valuesMap = Object.values(this.map[hash])[0];
+
+    for (let i = 0; i < valuesMap.length; i++) {
+      result.push(valuesMap[i]);
+    }
+    if (value) {
+      let newValues = Object.values(value)[0];
+      for (let i = 0; i < newValues.length; i++) {
+            result.push(newValues[i]);
+      }
+    } else {
+          result.push(null);
+    }
+    this.map[hash] = result;
+  }
+
+  leftJoin(hashMap1, hashMap2) {
+    if (hashMap1.map.length >= 2) {
+      for (let index = 0; index < hashMap2.map.length; index++) {
+        if (hashMap1.map[index]) {
+          hashMap1.hashKey(i, hashMap2.map[index]);
+        }
+      }
+    }
+
+    return hashMap1;
   }
 }
 
-const myhashmap = new Hashmap(10);
-myhashmap.set("esam", "401d15 student");
-myhashmap.set("ahmad", "401d15 student");
-myhashmap.set("mohamad", "401d15 student");
-myhashmap.set("samah", "401d15 student");
-myhashmap.set("laith", "401d15 student");
-myhashmap.set("shihab", "401d15 student");
+// const myhashmap = new Hashmap(10);
+// myhashmap.set("esam", "401d15 student");
+// myhashmap.set("ahmad", "401d15 student");
+// myhashmap.set("mohamad", "401d15 student");
+// myhashmap.set("samah", "401d15 student");
+// myhashmap.set("laith", "401d15 student");
+// myhashmap.set("shihab", "401d15 student");
 
-// console.log(myhashmap.map[8]);
-// console.log(myhashmap.map[8].head.value['esam']);
+// // console.log(myhashmap.map[8]);
+// // console.log(myhashmap.map[8].head.value['esam']);
 
-// console.log(myhashmap);
-myhashmap.map.forEach((ll) => {
-  console.log(ll.head.value["esam"] === "undefined");
-});
+// // console.log(myhashmap);
+// myhashmap.map.forEach((ll) => {
+//   console.log(ll.head.value["esam"] === "undefined");
+// });
 
-console.log("GET .... ");
-console.log(myhashmap.get("ahmad"));
+// console.log("GET .... ");
+// console.log(myhashmap.get("ahmad"));
 
-console.log("contains .... ");
-console.log("---------", myhashmap.contains("ahmad"));
+// console.log("contains .... ");
+// console.log("---------", myhashmap.contains("ahmad"));
 
-console.log("keys .... ");
-//console.log("---------", myhashmap.contains("ahmad"));
-console.log(myhashmap.keys());
-
-
-// Test Repeated Word
-const input1 = 'Once upon a time, there was a brave princess who...';
-const input2 ="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+// console.log("keys .... ");
+// //console.log("---------", myhashmap.contains("ahmad"));
+// console.log(myhashmap.keys());
 
 
-const newHash = new Hashmap(10);
+// // Test Repeated Word
+// const input1 = 'Once upon a time, there was a brave princess who...';
+// const input2 ="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
 
-let ret = newHash.repeatedWord(input1);
-console.log(ret);
 
-let ret2 = newHash.repeatedWord(input2);
-console.log(ret2);
+// const newHash = new Hashmap(10);
+
+// let ret = newHash.repeatedWord(input1);
+// console.log(ret);
+
+// let ret2 = newHash.repeatedWord(input2);
+// console.log(ret2);
 
 module.exports = Hashmap;
 
 
-//  for (let i = 0; i < words.length; i++) {
-//    let word = words[i].toLowerCase();
-//    if (hash.contains(word)) {
-//      return word;
-//    } else {
-//      hash.set(word, word);
-//    }
-//  }
